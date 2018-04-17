@@ -145,7 +145,9 @@ app.on('window-all-closed', function () {
 if(process.platform === 'darwin') {
     app.on('before-quit', function () {
         app.isQuiting = true;
-        walletWindow.hide();
+        if(walletWindow) {
+            walletWindow.hide();
+        }
         core.kill('SIGINT');
         setTimeout(function () {
             process.exit(0);
@@ -320,7 +322,10 @@ function startCore() {
 
                 app.on('login', function (event, webContents, request, authInfo, callback) {
                     event.preventDefault();
-                    callback(password, password);
+                    try {
+                        callback(password, password);
+                    } catch (e) {
+                    }
                 });
 
                 createWalletWindow('http://' + server);
