@@ -24,6 +24,7 @@ program
     .option('--disable-mining', 'Completely disables mining', false)
     .option('--fast-load', 'Don\'t checking databased on startup', false)
     .option('--verbose', 'More logging info', false)
+    .option('--ignore-double-connections', 'Ignore connections duplication', false)
     .option('--enable-address-rotation', 'Activates the rotation of the addresses', false)
     .parse(process.argv);
 
