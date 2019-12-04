@@ -1,9 +1,9 @@
 {
-  "name": "Izzzio",
+  "name": "BitCoenWallet",
   "version": "1.0.0",
-  "description": "Izzzio blockchain core",
+  "description": "BitCoenWallet based Izzzio blockchain core",
   "main": "main.js",
-  "homepage": "https://izzz.io",
+  "homepage": "https://bitcoen.io",
   "scripts": {
     "depency": "npm install && cd shell && npm install",
     "build": "build.sh",
