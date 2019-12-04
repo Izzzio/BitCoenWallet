@@ -829,7 +829,7 @@ function Blockchain(config) {
                     if(latestBlockHeld.hash === latestBlockReceived.previousHash && latestBlockHeld.index > 5) { //когда получен один блок от того который у нас есть
 
                         if(isValidChain(receivedBlocks) && (receivedBlocks[0].index <= maxBlock || receivedBlocks.length === 1)) {
-                            addBlockToChain(latestBlockReceived);
+                            addBlockToChain(latestBlockReceived, true);
                             responseLatestMsg(function (msg) {
                                 storj.put('chainResponseMutex', false);
                                 broadcast(msg);
