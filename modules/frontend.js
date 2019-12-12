@@ -277,7 +277,7 @@ class Frontend {
 
             wallet.enableLogging = false;
             wallet.block = 0;
-            wallet.balance = 1000000000000000;
+            wallet.balance = 1000000000000000000;
             wallet.id = req.body.from;
 
             wallet.keysPair.public = req.body.public;
