@@ -80,6 +80,9 @@ class Frontend {
             that.restoreWallet(req, res)
         });
 
+        app.get('/getBlock/:id', function (req, res) {
+            that.getBlock(req, res)
+        });
 
         that.registerMessages();
 
@@ -149,6 +152,21 @@ class Frontend {
             res.send(that.blockHandler.ourWalletBlocks);
         });
 
+    }
+
+    getBlock(req, res) {
+        let that = this;
+
+        utils.waitForSync(function () {
+            that.blockchain.get(req.params.id, function (err, val) {
+                if(!err) {
+                    res.send(JSON.parse(val))
+                } else {
+                    res.writeHead(404);
+                    res.end();
+                }
+            });
+        });
     }
 
     getWalletInfo(req, res) {
@@ -259,7 +277,7 @@ class Frontend {
 
             wallet.enableLogging = false;
             wallet.block = 0;
-            wallet.balance = 1000000000000000;
+            wallet.balance = 1000000000000000000;
             wallet.id = req.body.from;
 
             wallet.keysPair.public = req.body.public;

@@ -58,8 +58,8 @@ const config = {
 
     //Blockchain
     blockAcceptCount: 20,               //Количеств блоков подтверждения транзакции
-    hearbeatInterval: 10000,             //Внутренний таймер ноды
-    peerExchangeInterval: 5000,        //Частота обновления пиров
+    hearbeatInterval: 5000,             //Внутренний таймер ноды
+    peerExchangeInterval: 10000,        //Частота обновления пиров
     maxBlockSend: 600,                  //Должно быть больше blockQualityCheck
     blockQualityCheck: 100,             //Количество блоков "сверх", которое мы запрашиваем для проверки валидности цепочки
     limitedConfidenceBlockZone: 288,    //Зона "доверия". Цепочку ранее этой зоны менять нельзя. Должно быть больше blockQualityCheck
